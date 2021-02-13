@@ -1,20 +1,10 @@
+/* App.js */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +14,25 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Scale Component */
+.scale-main {
+  background-image: linear-gradient(to right, blue , red);
+  width: 50vw;
+  height: 2vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Scale Marker Component */
+.scale-marker {
+  background: radial-gradient(#fafafa, #9198e5);
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50px;
+}
+
+.scale-marker:hover {
+  background: radial-gradient(#918c8c, black);
+  cursor: pointer;
 }
