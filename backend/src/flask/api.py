@@ -6,10 +6,12 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import IP, PORT
 from flask_cors import CORS
+from analyzer import analyzer_blueprint
 from flask import Flask, request, jsonify
 
 
 app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'templates'), static_folder=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static'))
+app.register_blueprint(analyzer_blueprint)
 CORS(app)
 
 
