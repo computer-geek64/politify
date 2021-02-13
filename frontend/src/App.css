@@ -1,9 +1,10 @@
+/* App.js */
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@
   color: white;
 }
 
+/* Scale Component */
 .scale-main {
   background-image: linear-gradient(to right, blue , red);
   width: 50vw;
@@ -22,28 +24,15 @@
   align-items: center;
 }
 
+/* Scale Marker Component */
 .scale-marker {
-  background: radial-gradient(#fafafa, #9198e5);;
+  background: radial-gradient(#fafafa, #9198e5);
   width: 2vw;
   height: 2vw;
   border-radius: 50px;
 }
 
-.invisible-scale-marker {
-  width: 2vw;
-  height: 2vw;
-  border-radius: 50px;
-}
-
-.invisible-box {
-  width: 24vw;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scale-marker:hover {
+  background: radial-gradient(#918c8c, black);
+  cursor: pointer;
 }
