@@ -7,10 +7,11 @@ function Scale() {
     const [data, setData] = useState(null);
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(0);
+    const [total, setTotal] = useState(0);
 
     var config = {
         method: 'get',
-        url: 'http://47.201.32.187:8000/people/',
+        url: 'http://47.203.181.231:8000/people/',
     };
         
 
@@ -20,18 +21,23 @@ function Scale() {
             setMin(response.data['min']);
             setMax(response.data['max']);
             setData(response.data['people']);
+            let score = 0;
+            response.data['people'].forEach((item) => score = score + item['score'])
+            setTotal(score)
         } 
 
         if (data == null) {
             redemption();
-        } 
+        } else {
+            console.log(total)
+        }
     }, [data])
 
     return (
         <div className="scale-container">
             <div className="invisible-container">
             <div className="scale-info">
-                <Typography variant="h2"><font className="special-font">The political specturm</font></Typography>
+                <Typography variant="h2"><font className="special-font">The political spectrum</font></Typography>
                 <Typography variant="h6">
                     This spectrum tries to quantify how "radical" politicians' <br/>
                     tweets are relative to their colleagues. The scale realigns itself <br/>
@@ -49,7 +55,7 @@ function Scale() {
                 </div>
                 <div className="scale-main">
                     {
-                        data && data.map((item) => <ScaleMarker score={(item['score']/(max - min)) * 100} name={item['name']} alt={item['handle']} image={item['picture']}/>)
+                        data && data.map((item) => <ScaleMarker score={(item['score'] - min)/(max - min)} name={item['name']} alt={item['handle']} image={item['picture']}/>)
                     }
                 </div>
             </div>

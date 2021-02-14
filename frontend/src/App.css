@@ -126,6 +126,10 @@
   -webkit-text-fill-color: transparent;
 }
 
+.form-button {
+  padding-top: 1vh;
+}
+
 /* About */
 .about-container {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(./components/images/pexels-luis-quintero-2833037.jpg) no-repeat center center fixed;
@@ -160,4 +164,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+/* TweetForm */
+.tweetform-container {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(./components/images/pexels-gabby-k-5849560.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  text-align: left;
 }

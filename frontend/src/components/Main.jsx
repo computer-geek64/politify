@@ -13,6 +13,7 @@ import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import About from './About.jsx';
 import MainForm from './MainForm';
 import Scale from './Scale.jsx';
+import TweetForm from './Tweetform.jsx';
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -23,6 +24,9 @@ const darkTheme = createMuiTheme({
       'Poppins',
       'sans-serif',
     ].join(','),
+    button: {
+      textTransform: 'none',
+    },
   },
 });
 
@@ -104,8 +108,9 @@ export default function Main(props) {
           aria-label="nav tabs example"
         >
           <LinkTab label="About" {...a11yProps(0)} />
-          <LinkTab label="New Handle"  {...a11yProps(1)} />
-          <LinkTab label="Politi-scale" {...a11yProps(1)} />
+          <LinkTab label="pol(@anyone)"  {...a11yProps(1)} />
+          <LinkTab label="Politi-scale" {...a11yProps(2)} />
+          <LinkTab label="Your Tweet!" {...a11yProps(3)} />
         </Tabs>
         </Box>
       </AppBar>
@@ -118,6 +123,9 @@ export default function Main(props) {
         </TabPanel>
         <TabPanel value={value} index={2}>
           <Scale/>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <TweetForm/>
         </TabPanel>
       </div>
       </ThemeProvider>
