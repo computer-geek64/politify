@@ -16,3 +16,6 @@ Made by: Ashish D'Souza and Sharath Palathingal
 * **Transformers** for implementing the Bidirectional Encoder Representations from Transformers (**BERT**) natural language processing networks
 * **PyTorch** for training and testing the machine learning models
 * **Nvidia CUDA** for GPU-accelerated computations to faster optimize the machine learning models, running on an Nvidia RTX 2070 Super graphics card
+
+
+### How It Works:
