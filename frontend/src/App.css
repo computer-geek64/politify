@@ -7,8 +7,8 @@
 }
 
 .App-header {
-  /* background-color: #282c34; */
-  height: 100vh;
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,9 +20,9 @@
 /* Scale Component */
 .scale-main {
   background-image: linear-gradient(to right, blue , red);
-  width: 50vw;
-  height: 2vh;
-  border-radius: 10px;
+  width: 75vw;
+  height: 3vh;
+  border-radius: 50px;
   display: flex;
   align-items: center;
 }
@@ -30,7 +30,17 @@
 /* Scale Marker Component */
 .scale-marker {
   background: radial-gradient(#fafafa, #9198e5);
-  width: 2.5vw;
-  height: 2.5vw;
-  border-radius: 20px;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50px;
+}
+
+.scale-marker:hover {
+  cursor: pointer;
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -10,7 +10,6 @@ function Scale() {
     var config = {
         method: 'get',
         url: 'http://47.201.32.187:8000/people/',
-        headers: { }
     };
         
 
@@ -24,19 +23,14 @@ function Scale() {
 
         if (data == null) {
             redemption();
-        } else {
-            data.map((item) => console.log(item))
-        }
-
+        } 
     }, [data])
 
     return (
-        <div className="App-header">
-            <div className="scale-main">
-                {
-                    data && data.map((item) => <ScaleMarker score={(item['score']/(max - min)) * 100} name={item['name']} alt={item['handle']} image={item['picture']}/>)
-                }
-            </div>
+        <div className="scale-main">
+            {
+                data && data.map((item) => <ScaleMarker score={(item['score']/(max - min)) * 100} name={item['name']} alt={item['handle']} image={item['picture']}/>)
+            }
         </div>
     )
 }

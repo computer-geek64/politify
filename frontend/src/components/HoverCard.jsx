@@ -23,14 +23,14 @@ function HoverCard(props) {
           alt={props.alt}
           height="140"
           image={props.image}
-          title="Contemplative Reptile"
+          title={props.handle}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-              Tap on the dot to learn more about {props.name}'s views.
+              Tap to learn more about {props.name}'s political views.
           </Typography>
         </CardContent>
       </CardActionArea>
