@@ -23,6 +23,7 @@ Our Ml system also assigns a Bias score to each public figure which helps users 
 * **Google Cloud**
   * **Natural Language API** for performing sentiment analysis on tweets
   * Also used for preprocessing the tweet datasets with text classification (unsupervised learning) to eliminate extra noise
+* **OpenAI** Davinci Engine for single-tweet classification
 * **Selenium** for web scraping JavaScript-rendered tweets
 * **BeautifulSoup** for other normal webscraping
 * **Pandas** for preprocessing datasets
