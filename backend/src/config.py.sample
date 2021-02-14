@@ -10,3 +10,9 @@ PORT = 8000  # Flask server port
 DB_NAME = ''  # PostgreSQL database name
 DB_USER = ''  # PostgreSQL database username
 DB_PASSWORD = ''  # PostgreSQL database password
+
+# Google cloud
+GOOGLE_APPLICATION_CREDENTIALS_LOCATION = ''  # Location for Google Cloud credentials
+
+# OpenAI
+OPENAI_API_KEY = ''  # API Key for OpenAI
