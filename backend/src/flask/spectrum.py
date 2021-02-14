@@ -18,4 +18,29 @@ def get_spectrum():
     conn = psycopg2.connect(database=DB_NAME, user=DB_USER, password=DB_PASSWORD)
     cursor = conn.cursor()
 
+    cursor.execute('''
+SELECT *
+  FROM person;
+''')
+    people = sorted([{
+        'handle': person[0],
+        'name': person[1],
+        'description': person[2],
+        'picture': person[3],
+        'score': person[4]
+    } for person in cursor.fetchall()], key=lambda x: x['score'])
+
+    current_sum = 0
+    for i in range(len(people)):
+        people[i]['score'] -= current_sum
+        current_sum += people[i]['score']
+
     conn.close()
+
+    json_response = {
+        'min': 0,
+        'max': 1,
+        'people': people
+    }
+
+    return jsonify(json_response), 200

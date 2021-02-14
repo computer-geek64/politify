@@ -9,7 +9,9 @@ DROP TABLE IF EXISTS tweet CASCADE;
 CREATE TABLE person (
     username VARCHAR PRIMARY KEY,
     name VARCHAR NOT NULL,
-    picture VARCHAR NOT NULL
+    description VARCHAR NOT NULL,
+    picture VARCHAR NOT NULL,
+    score FLOAT NOT NULL
 );
 
 -- Create table tweet
