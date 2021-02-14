@@ -1,12 +1,12 @@
 import React from 'react';
-import MainForm from './components/MainForm.jsx';
 import Main from './components/Main.jsx';
+import logo from './logo.jpg'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <Main/>
+        <Main image={logo}/>
     </div>
   );
 }

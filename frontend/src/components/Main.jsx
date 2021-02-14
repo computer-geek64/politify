@@ -8,6 +8,21 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Scale from './Scale.jsx';
 import MainForm from './MainForm';
+import Toolbar from '@material-ui/core/Toolbar';
+import Avatar from '@material-ui/core/Avatar';
+import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+
+const darkTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+  typography: {
+    fontFamily: [
+      'Poppins',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,9 +74,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  title: {
+    flexGrow: 1,
+  },
 }));
 
-export default function Main() {
+export default function Main(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -71,25 +89,35 @@ export default function Main() {
 
   return (
     <div className={classes.root}>
+      <ThemeProvider theme={darkTheme}>
       <AppBar position="fixed">
+        <Box display="flex" alignItems="center" justifyContent="space-between" padding={0}>
+        <Toolbar>
+          <Avatar alt="politify" src={props.image} className={classes.large}/>
+          <Typography variant="h5" style={{paddingLeft: '0.5vw'}}>Politify</Typography>
+        </Toolbar>
         <Tabs
-          variant="fullWidth"
           value={value}
           onChange={handleChange}
           aria-label="nav tabs example"
         >
-          <LinkTab label="New Handle" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="Politify's Scale" href="/trash" {...a11yProps(1)} />
+          <LinkTab label="About" {...a11yProps(0)} />
+          <LinkTab label="New Handle"  {...a11yProps(1)} />
+          <LinkTab label="Politi-scale" {...a11yProps(1)} />
         </Tabs>
+        </Box>
       </AppBar>
       <div className="App-header">
-        <TabPanel value={value} index={0}>
-          <MainForm/>          
+        <TabPanel value={value} index={0}>  
         </TabPanel>
         <TabPanel value={value} index={1}>
+          <MainForm/>           
+        </TabPanel>
+        <TabPanel value={value} index={2}>
           <Scale/>
         </TabPanel>
       </div>
+      </ThemeProvider>
     </div>
   );
 }

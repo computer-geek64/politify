@@ -4,6 +4,8 @@
 .App {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .App-header {
@@ -14,10 +16,53 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fafafa;
 }
 
 /* Scale Component */
+.scale-container {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(./components/images/pexels-life-matters-4613879.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invisible-container {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.scale-info {
+  text-align: left;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scale-main-container {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.markers {
+  width: 78vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 4vh 0;
+}
+
 .scale-main {
   background-image: linear-gradient(to right, blue , red);
   width: 75vw;
@@ -29,10 +74,18 @@
 
 /* Scale Marker Component */
 .scale-marker {
-  background: radial-gradient(#fafafa, #9198e5);
+  padding: 0.5vh;
   width: 3vw;
   height: 3vw;
   border-radius: 50px;
+}
+
+.democrat {
+  background-color: rgb(0, 191, 255);
+}
+
+.republican {
+  background-color: red;
 }
 
 .scale-marker:hover {
@@ -43,4 +96,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Mainform */
+.mainform-container {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(./components/images/mainform-cover.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  text-align: left;
+}
+
+.caption {
+  text-align: left;
+  padding: 1vw 5vw;
+}
+
+.main-form {
+  padding: 1vw 5vw;
+}
+
+.special-font {
+  background: -webkit-linear-gradient(blue,red);
+  background: linear-gradient(to right, rgb(140, 225, 253) , rgb(248, 133, 133)); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

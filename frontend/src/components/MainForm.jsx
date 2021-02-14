@@ -1,5 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
@@ -26,10 +27,13 @@ function MainForm() {
     }
 
     return (
-        <div className="App-header">
-            Enter a user's twitter handle to see how biased their tweets are.
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <TextField name="handle" inputRef={register} id="outlined-basic" label="Twitter Handle" variant="outlined" defaultValue="@"/>
+        <div className="mainform-container">
+            <div className="caption">
+            <Typography variant="h3">Enter a user's twitter handle to see how<br/>
+            politically <font className="special-font">biased</font> their tweets are.</Typography>
+            </div>
+            <form className="main-form" onSubmit={handleSubmit(onSubmit)}>
+                <TextField name="handle" inputRef={register} id="outlined-basic" label="Twitter Handle" variant="outlined" defaultValue="@" width={500}/>
             </form>
         </div>
     )
