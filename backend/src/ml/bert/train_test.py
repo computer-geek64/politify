@@ -128,7 +128,7 @@ def get_predictions(texts):
     model = BertForSequenceClassification.from_pretrained(model_path)
 
     #inputs = tokenizer([''.join(c for c in re.sub(r'https?:\/\/.*[\r\n]*', '', text.lower().replace('\n', ' ').replace('&amp;', 'and')) if c in 'abcdefghijklmnopqrstuvwxyz01234567890 ,.!?/$%()-').strip() for text in texts], padding=True, truncation=True, max_length=max_length, return_tensors='pt')
-    inputs = tokenizer(map(preprocess_text, texts), padding=True, truncation=True, max_length=max_length, return_tensors='pt')
+    inputs = tokenizer(list(map(preprocess_text, texts)), padding=True, truncation=True, max_length=max_length, return_tensors='pt')
     outputs = model(**inputs)
     return [['right', 'left'][output.argmax()] for output in outputs[0].softmax(1)]
 
