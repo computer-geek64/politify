@@ -25,10 +25,13 @@ function MainForm() {
         });
     }
 
-    return(
-        <form onSubmit={handleSubmit(onSubmit)}>
-             <TextField name="handle" inputRef={register} id="outlined-basic" label="Twitter Handle" variant="outlined" defaultValue="@"/>
-        </form>
+    return (
+        <div className="App-header">
+            Enter a user's twitter handle to see how biased their tweets are.
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <TextField name="handle" inputRef={register} id="outlined-basic" label="Twitter Handle" variant="outlined" defaultValue="@"/>
+            </form>
+        </div>
     )
 }
 

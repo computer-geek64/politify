@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 /* App.js */
 .App {
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .App-header {
   /* background-color: #282c34; */
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +30,7 @@
 /* Scale Marker Component */
 .scale-marker {
   background: radial-gradient(#fafafa, #9198e5);
-  width: 2vw;
-  height: 2vw;
-  border-radius: 50px;
-}
-
-.scale-marker:hover {
-  background: radial-gradient(#918c8c, black);
-  cursor: pointer;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 20px;
 }
