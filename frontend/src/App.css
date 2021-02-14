@@ -125,3 +125,39 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* About */
+.about-container {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(./components/images/pexels-luis-quintero-2833037.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-vector {
+  object-fit: cover;
+  height: 17vw;
+  width: 17vw;
+  border-radius: 360px;
+
+}
+.about-info {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-main-container {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
