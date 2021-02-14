@@ -7,6 +7,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import psycopg2
 from threading import Thread
 from web.twitter import get_tweets
+from ml.bert.train_test import get_predictions
 from flask import Blueprint, request, jsonify
 from config import DB_NAME, DB_USER, DB_PASSWORD
 
@@ -35,21 +36,34 @@ DELETE FROM person
 ''', (username,))
     conn.commit()
 
-    name, picture, tweets = get_tweets(username, 100, True)
+    description = 'I am a politician.'
+
+    print('[-] Scraping tweets...')
+    name, picture, tweets = get_tweets(username, 200, True)
+    print(f'[+] {len(tweets)} found!')
+
+    print('[-] Predicting...')
+    predictions = get_predictions(tweets)
+    print('[+] Prediction finished')
+    score = predictions.count('right') / len(tweets)
 
     cursor.execute('''
 INSERT INTO person
             (
                 username,
                 name,
-                picture
+                description,
+                picture,
+                score
             )
      VALUES (
                 %s,
                 %s,
+                %s,
+                %s,
                 %s
             );
-''', (username, name, picture))
+''', (username, name, description, picture, score))
 
     params = []
     for tweet in tweets:
