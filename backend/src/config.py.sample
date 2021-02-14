@@ -13,3 +13,6 @@ DB_PASSWORD = ''  # PostgreSQL database password
 
 # Google cloud
 GOOGLE_APPLICATION_CREDENTIALS_LOCATION = ''  # Location for Google Cloud credentials
+
+# OpenAI
+OPENAI_API_KEY = ''  # API Key for OpenAI

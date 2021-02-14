@@ -21,7 +21,7 @@ def set_seed(seed):
 
     if is_torch_available():
         torch.manual_seed(seed)
-        torch.cuda.manual_seed_all(seed)
+        #torch.cuda.manual_seed_all(seed)
 
     if is_tf_available():
         import tensorflow as tf
@@ -36,14 +36,19 @@ def preprocess_text(text):
     return re.sub(r'https?:\/\/.*[\r\n]*', '', text.lower()).replace('\n', ' ').strip()
 
 
-def preprocess_dataset(filename=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'datasets', 'ExtractedTweets.csv'), test_data_percentage=0.2):
+def preprocess_dataset(filename=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'datasets', 'tweets.csv'), test_data_percentage=0.2):
     dataset = pd.read_csv(filename, sep=',')
     dataset = dataset.sample(frac=1).reset_index(drop=True)
 
     #data = list(dataset['Tweet'].apply(lambda x: ''.join(c for c in re.sub(r'https?:\/\/.*[\r\n]*', '', x.lower().replace('\n', ' ').replace('&amp;', 'and')) if c in 'abcdefghijklmnopqrstuvwxyz01234567890 ,.!?/$%()-').strip()))
-    data = list(dataset['Tweet'].apply(lambda text: re.sub(r'^rt @.*: ', '', preprocess_text(text).replace('…', ''))))
-    labels = np.array(dataset['Party'] == 'Democrat').astype(int)
-    label_names = ['Republican', 'Democrat']
+    data = list(dataset['Tweet'].apply(lambda text: re.sub(r'^rt @.*: ', '', preprocess_text(str(text)).replace('…', ''))))
+    #labels = np.array(dataset['Party'] == 'Democrat').astype(int)
+    labels = np.array(dataset['Party'])
+    for i in range(len(labels)):
+        labels[i] += 1
+
+    #label_names = ['Republican', 'Democrat']
+    label_names = ['left', 'non-political', 'right']
 
     return train_test_split(data, labels, test_size=test_data_percentage), label_names
 
@@ -113,7 +118,7 @@ def train_model():
     trainer.train()
     trainer.evaluate()
 
-    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models', 'political_tweets_bert-base-uncased_2')
+    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models', 'political_tweets_bert-base-uncased_3')
     model.save_pretrained(model_path)
     tokenizer.save_pretrained(model_path)
 

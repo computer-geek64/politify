@@ -4,6 +4,7 @@
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+import re
 from config import GOOGLE_APPLICATION_CREDENTIALS_LOCATION
 from google.cloud import language_v1
 
@@ -12,21 +13,30 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS_LO
 client = language_v1.LanguageServiceClient()
 
 
+def preprocess_text(text):
+    # Makes text lowercase
+    # Removes hyperlinks
+    # Replaces newlines with spaces
+    # Removes trailing spaces
+    return re.sub(r'https?:\/\/.*[\r\n]*', '', text.lower()).replace('\n', ' ').strip()
+
+
 def get_sentiment_predictions(texts):
     predictions = []
     for text in texts:
+        #text = preprocess_text(text)
         document = language_v1.Document(content=text, type_=language_v1.Document.Type.PLAIN_TEXT)
         sentiments = client.analyze_sentiment(request={'document': document})
         score = 0
         for sentence in sentiments.sentences:
             for keyword in keywords:
                 if keyword['phrase'].replace(' ', '') in sentence.text.content.lower().replace(' ', ''):
-                    if sentence.sentiment.score <= -0.25:
+                    if sentence.sentiment.score <= -0.4:
                         if keyword['negative'] == 'left':
                             score -= keyword['priority']
                         else:
                             score += keyword['priority']
-                    elif sentence.sentiment.score >= 0.25:
+                    elif sentence.sentiment.score >= 0.4:
                         if keyword['positive'] == 'left':
                             score -= keyword['priority']
                         else:
@@ -49,6 +59,8 @@ keywords = [
     {'phrase': 'prolife', 'positive': 'right', 'negative': 'left', 'priority': 3},
     {'phrase': 'pro-life', 'positive': 'right', 'negative': 'left', 'priority': 3},
     {'phrase': 'pro life', 'positive': 'right', 'negative': 'left', 'priority': 3},
+    {'phrase': 'prochoice', 'positive': 'left', 'negative': 'right', 'priority': 3},
+    {'phrase': 'pro-choice', 'positive': 'left', 'negative': 'right', 'priority': 3},
     {'phrase': 'antiabortion', 'positive': 'right', 'negative': 'left', 'priority': 3},
     {'phrase': 'anti-abortion', 'positive': 'right', 'negative': 'left', 'priority': 3},
     {'phrase': 'anti abortion', 'positive': 'right', 'negative': 'left', 'priority': 3},
