@@ -1,0 +1,90 @@
+This is a tweet sentiment classifier
+Tweet: "I think women should be able to choose what they do with their bodies"
+Sentiment: Left
+###
+Tweet: "The radical left or socialism is such a pain💢"
+Sentiment: Right
+###
+Tweet: "Donald Trump is the best thing to happen to this country👍"
+Sentiment: Right
+###
+Tweet: "This country needs to heal right now"
+Sentiment: Left
+###
+Tweet: "This is the link to the article"
+Sentiment: Neutral
+###
+Tweet: "I voted to acquit former President Trump. Read my full statement below"
+Sentiment: Right
+###
+Tweet: "Now it’s time for us as a country to move on. We need to remember that at the end of the day we’re on the same team: the American team. Both sides can do better at remembering that."
+Sentiment: Right
+###
+Tweet: "This trial proved Trump’s high crimes against the Constitution. 43 senators put Trump first and failed the test of history. But history was also made with the largest bipartisan majority ever voting to convict a president. The rest of the story is ours to write."
+Sentiment: Left
+###
+Tweet: "Too many Republican senators are comfortable hiding behind their misguided belief that trying a former president for his actions in office is unconstitutional — even as they refuse to answer whether actually inciting an insurrection is unconstitutional."
+Sentiment: Left
+###
+Tweet: "I voted for convicting Trump because he should be held accountable for inciting a violent insurrection against the will of the people, Congress, and our Democracy. He should be held accountable for violating his oath of office and failing to support and defend our Constitution."
+Sentiment: Left
+###
+Tweet: "After carefully listening to every minute of the presentations made by the House Managers and the former president’s legal team, I am convinced that the Senate does not have jurisdiction to render a judgement against the former president. Therefore, I voted not guilty."
+Sentiment: Right
+###
+Tweet: "I was proud to pay a high starting wage in my own business, but a national $15 minimum wage would be a straight jacket on the economy. You're going to lose somewhere around 1 to 1.5 million jobs, especially in places hit hardest by COVID like restaurants."
+Sentiment: Right
+###
+Tweet: "REPORT: A $15 min wage would Upwards arrow child care costs 21% on avg in America. Child care costs in Iowa are already skyrocketing. A $15 min wage is not the right solution for our working families. Expanding access to child care is—& I'll keep fighting to do so."
+Sentiment: Right
+###
+Tweet: "The CDC & overwhelming scientific data say it’s safe for kids to go back to school. Schools have only used $4B of the $68B they’ve already been given by Congress. So why is Biden ok with unions keeping kids out of the classroom schools closed?"
+Sentiment: Right
+###
+Tweet: "The facts and the evidence were overwhelming—former President Donald Trump lied for months to his supporters, summoned them to Washington, and incited a violent insurrection against our government and our democracy."
+Sentiment: Left
+###
+
+Tweet text
+1. "I think women should be able to choose what they do with their bodies"
+2. "The radical left or socialism is such a pain💢"
+3. "Donald Trump is the best thing to happen to this country👍"
+4. "This country needs to heal right now"
+5. "This is the link to the article"
+6. "I voted to acquit former President Trump. Read my full statement below"
+7. "Now it’s time for us as a country to move on. We need to remember that at the end of the day we’re on the same team: the American team. Both sides can do better at remembering that."
+8. "This trial proved Trump’s high crimes against the Constitution. 43 senators put Trump first and failed the test of history. But history was also made with the largest bipartisan majority ever voting to convict a president. The rest of the story is ours to write."
+9. "Too many Republican senators are comfortable hiding behind their misguided belief that trying a former president for his actions in office is unconstitutional — even as they refuse to answer whether actually inciting an insurrection is unconstitutional."
+10. "I voted for convicting Trump because he should be held accountable for inciting a violent insurrection against the will of the people, Congress, and our Democracy. He should be held accountable for violating his oath of office and failing to support and defend our Constitution."
+11. "After carefully listening to every minute of the presentations made by the House Managers and the former president’s legal team, I am convinced that the Senate does not have jurisdiction to render a judgement against the former president. Therefore, I voted not guilty."
+12. "I was proud to pay a high starting wage in my own business, but a national $15 minimum wage would be a straight jacket on the economy. You're going to lose somewhere around 1 to 1.5 million jobs, especially in places hit hardest by COVID like restaurants."
+13. "REPORT: A $15 min wage would Upwards arrow child care costs 21% on avg in America. Child care costs in Iowa are already skyrocketing. A $15 min wage is not the right solution for our working families. Expanding access to child care is—& I'll keep fighting to do so."
+14. "The CDC & overwhelming scientific data say it’s safe for kids to go back to school. Schools have only used $4B of the $68B they’ve already been given by Congress. So why is Biden ok with unions keeping kids out of the classroom schools closed?"
+15. "The facts and the evidence were overwhelming—former President Donald Trump lied for months to his supporters, summoned them to Washington, and incited a violent insurrection against our government and our democracy."
+
+Tweet sentiment ratings:
+1. Left
+2. Right
+3. Right
+4. Left
+5. Neutral
+6. Right
+7. Right
+8. Left
+9. Left
+10. Left
+11. Right
+12. Right
+13. Right
+14. Right
+15. Left
+
+###
+
+Tweet text
+1. "Donald Trump needs to be impeached!"
+2. "Donald Trump deserves to be acquitted"
+
+Tweet sentiment ratings:
+1. Left
+2. Right
